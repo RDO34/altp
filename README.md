@@ -6,6 +6,10 @@ A simple theme-picker for [alacritty](https://alacritty.org) A cross-platform, G
 
 Full credits to [@rajasegar](https://github.com/rajasegar) and [@juanvqz](https://github.com/juanvqz) for the awesome [alacritty-themes](https://github.com/rajasegar/alacritty-themes) NPM package that inspired this.
 
+Credit for the included themes goes to the original authors. See the individual themes for the author details.
+
+> Requires Alacritty >= v0.13.0
+
 ## Motivation
 
 I'd wanted to try out some other themes for Alacritty so thought I'd give [alacritty-themes](https://github.com/rajasegar/alacritty-themes) a go, but found it didn't support the newer TOML config syntax for Alacritty.
@@ -66,3 +70,19 @@ Options:
   -h, --help       Print help (see more with '--help')
   -V, --version    Print version
 ```
+
+Note that, by default `altp` will assume the alacritty config dir path to be:
+
+```
+C:/Users/user/AppData/Roaming/alacritty
+```
+
+for Windows and:
+
+```
+/home/user/.config/alacritty
+```
+
+for all other operating systems.
+
+Use the `d` or `dir` argument to provide a custom alacritty config path.
