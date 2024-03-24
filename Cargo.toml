@@ -1,0 +1,21 @@
+[package]
+name = "altp"
+version = "0.1.0"
+authors = ["Ross Donohoe <rossdon.95@googlemail.com>"]
+edition = "2021"
+
+[build]
+build = "build.rs"
+
+[dependencies]
+clap = { version = "4.5.3", features = ["derive"] }
+dialoguer = "0.11.0"
+toml = "0.8.12"
+whoami = "1.5.1"
+
+[build-dependencies]
+whoami = "1.5.1"
+
+[[bin]]
+name = "altp"
+path = "src/main.rs"
