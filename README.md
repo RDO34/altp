@@ -1,6 +1,6 @@
 # altp
 
-A simple theme-picker for [alacritty](https://alacritty.org) A cross-platform, GPU-accelerated terminal emulator.
+A simple theme-picker for [alacritty](https://alacritty.org) - a cross-platform, GPU-accelerated terminal emulator.
 
 `[al]acritty [t]heme [p]icker`
 
