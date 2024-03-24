@@ -1,6 +1,6 @@
 [package]
 name = "altp"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Ross Donohoe <rossdon.95@googlemail.com>"]
 edition = "2021"
 description = "A simple theme-picker for alacritty A cross-platform, GPU-accelerated terminal emulator."
