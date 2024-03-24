@@ -72,32 +72,26 @@ fn main() {
     }
 
     let theme_list = themes::get_all_themes();
-    let mut selection = 0;
-
-    match args.theme {
-        Some(theme_name) => {
-            selection = theme_list
-                .iter()
-                .position(|theme| theme.name == theme_name)
-                .unwrap_or_else(|| {
-                    eprintln!("Theme not found");
-                    exit(1);
-                });
-        }
-        None => {
-            selection = Select::new()
-                .with_prompt("Select a theme")
-                .items(
-                    &theme_list
-                        .iter()
-                        .map(|theme| theme.name.as_str())
-                        .collect::<Vec<&str>>(),
-                )
-                .default(0)
-                .interact()
-                .unwrap();
-        }
-    }
+    let selection: usize = match args.theme {
+        Some(theme_name) => theme_list
+            .iter()
+            .position(|theme| theme.name == theme_name)
+            .unwrap_or_else(|| {
+                eprintln!("Theme not found");
+                exit(1);
+            }),
+        None => Select::new()
+            .with_prompt("Select a theme")
+            .items(
+                &theme_list
+                    .iter()
+                    .map(|theme| theme.name.as_str())
+                    .collect::<Vec<&str>>(),
+            )
+            .default(0)
+            .interact()
+            .unwrap(),
+    };
 
     let theme_path = Path::new(&theme_list[selection].path);
     let theme = get_or_create_config_table(theme_path.to_str().unwrap(), false);
