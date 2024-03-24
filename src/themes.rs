@@ -46,7 +46,7 @@ pub fn get_all_themes() -> Vec<Theme> {
         });
     }
 
-    themes.sort_by(|a, b| a.name.cmp(&b.name));
+    themes.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
 
     themes
 }
@@ -72,7 +72,8 @@ fn resolve_altp_config_dir() -> String {
 }
 
 fn get_name_from_path(path: &str) -> String {
-    let name = path.split("/").last().unwrap();
+    let sep = if cfg!(windows) { "\\" } else { "/" };
+    let name = path.split(sep).last().unwrap();
     let name = name.split(".").next().unwrap();
     name.to_string()
 }
