@@ -1,6 +1,6 @@
 [package]
 name = "altp"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["Ross Donohoe <rossdon.95@googlemail.com>"]
 repository = "https://github.com/RDO34/altp"
 edition = "2021"
